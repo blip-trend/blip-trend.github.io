@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bl!p Co. - IT Services Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f0f4f8; /* Softer, light blue-gray background */
+            color: #4a5568; /* Slightly softer dark gray text */
+            line-height: 1.6;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        .section-heading {
+            border-bottom: 2px solid #cbd5e0; /* Softer border */
+            padding-bottom: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+        .card {
+            background-color: #ffffff;
+            border-radius: 0.75rem; /* rounded-xl */
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05); /* Lighter shadow */
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+        .link-style {
+            color: #4299e1; /* Softer blue */
+            text-decoration: none;
+            transition: color 0.2s ease-in-out;
+        }
+        .link-style:hover {
+            color: #3182ce; /* Slightly darker softer blue on hover */
+            text-decoration: underline;
+        }
+        ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+        ul li:before {
+            content: '✓'; /* Checkmark for list items */
+            color: #48bb78; /* Softer green */
+            font-weight: bold;
+            display: inline-block;
+            width: 1em;
+            margin-left: -1em;
+        }
+    </style>
+</head>
+<body class="antialiased">
+    <div class="container">
+        <header class="text-center py-8 bg-gradient-to-r from-blue-400 to-green-500 text-white rounded-xl mb-8 shadow-lg">
+            <h1 class="text-5xl font-extrabold mb-2">Bl!p Co.</h1>
+            <p class="text-xl font-light">Your Partner in Innovative IT Solutions</p>
+        </header>
+
+        <section id="contact-section" class="card mb-8">
+            <h2 class="text-3xl font-semibold text-gray-700 mb-4 section-heading">Contact Us</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 text-lg" id="contact-details">
+                </div>
+        </section>
+
+        <section id="about-us-section" class="card mb-8">
+            <h2 class="text-3xl font-semibold text-gray-700 mb-4 section-heading">About Us</h2>
+            <p class="text-lg text-gray-600" id="about-us-content">
+                </p>
+        </section>
+
+        <section id="skills-section" class="card mb-8">
+            <h2 class="text-3xl font-semibold text-gray-700 mb-4 section-heading">Our Expertise & Skills</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 text-lg" id="skills-content">
+                </div>
+        </section>
+
+        <section id="work-experience-section" class="card mb-8">
+            <h2 class="text-3xl font-semibold text-gray-700 mb-4 section-heading">Work Experience & Achievements</h2>
+            <div id="work-experience-content">
+                </div>
+        </section>
+
+        <section id="projects-section" class="card mb-8">
+            <h2 class="text-3xl font-semibold text-gray-700 mb-4 section-heading">Key Projects</h2>
+            <div id="projects-content">
+                </div>
+        </section>
+
+        <section id="education-section" class="card mb-8">
+            <h2 class="text-3xl font-semibold text-gray-700 mb-4 section-heading">Education</h2>
+            <p class="text-lg text-gray-600" id="education-content">
+                </p>
+        </section>
+
+        <section id="languages-section" class="card mb-8">
+            <h2 class="text-3xl font-semibold text-gray-700 mb-4 section-heading">Languages</h2>
+            <ul class="list-none pl-0 text-lg text-gray-600 space-y-1" id="languages-content">
+                </ul>
+        </section>
+
+        <footer class="text-center py-6 text-gray-500 text-sm">
+            <p>&copy; 2025 Bl!p Co. All rights reserved.</p>
+        </footer>
+    </div>
