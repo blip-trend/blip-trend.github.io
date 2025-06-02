@@ -106,3 +106,133 @@
             <p>&copy; 2025 Bl!p Co. All rights reserved.</p>
         </footer>
     </div>
+
+    <script src="portfolioContent.js"></script>
+    <script>
+        // Ensure the DOM is fully loaded before trying to populate content
+        document.addEventListener('DOMContentLoaded', () => {
+            // Check if portfolioContent is available from the external script
+            if (typeof window.portfolioContent === 'undefined') {
+                console.error("Error: portfolioContent.js not loaded or window.portfolioContent is undefined.");
+                // Optionally, display a user-friendly message on the page
+                return; // Stop execution if content is not available
+            }
+
+            const content = window.portfolioContent; // Access the global portfolioContent object
+
+            // Populate Contact Section
+            const contactDetails = document.getElementById('contact-details');
+            if (contactDetails && content.contact) {
+                contactDetails.innerHTML = `
+                    <div>
+                        <p class="font-medium">Email:</p>
+                        <a href="mailto:${content.contact.email}" class="link-style">${content.contact.email}</a>
+                    </div>
+                    <div>
+                        <p class="font-medium">Phone:</p>
+                        <p>${content.contact.phone}</p>
+                    </div>
+                    <div>
+                        <p class="font-medium">LinkedIn:</p>
+                        <a href="${content.contact.linkedin.url}" target="_blank" class="link-style">${content.contact.linkedin.text}</a>
+                    </div>
+                    <div>
+                        <p class="font-medium">GitHub:</p>
+                        <a href="${content.contact.github.url}" target="_blank" class="link-style">${content.contact.github.text}</a>
+                    </div>
+                    <div>
+                        <p class="font-medium">Medium:</p>
+                        <a href="${content.contact.medium.url}" target="_blank" class="link-style">${content.contact.medium.text}</a>
+                    </div>
+                    <div>
+                        <p class="font-medium">Twitter:</p>
+                        <p>${content.contact.twitter}</p>
+                    </div>
+                    <div>
+                        <p class="font-medium">Location:</p>
+                        <p>${content.contact.location}</p>
+                    </div>
+                `;
+            }
+
+            // Populate About Us Section
+            const aboutUsContent = document.getElementById('about-us-content');
+            if (aboutUsContent && content.aboutUs) {
+                aboutUsContent.textContent = content.aboutUs;
+            }
+
+            // Populate Skills Section
+            const skillsContent = document.getElementById('skills-content');
+            if (skillsContent && content.skills) {
+                const createSkillList = (title, items) => {
+                    let html = `<div><h3 class="text-xl font-semibold text-blue-600 mb-2">${title}:</h3><ul class="list-none pl-0 space-y-1 text-gray-600">`;
+                    items.forEach(item => {
+                        html += `<li>${item}</li>`;
+                    });
+                    html += `</ul></div>`;
+                    return html;
+                };
+                skillsContent.innerHTML = `
+                    ${createSkillList("Languages & Frameworks", content.skills.languagesFrameworks)}
+                    ${createSkillList("Cloud & DevOps", content.skills.cloudDevOps)}
+                    ${createSkillList("Tools & Platforms", content.skills.toolsPlatforms)}
+                    ${createSkillList("Methodologies & Concepts", content.skills.methodologiesConcepts)}
+                    ${createSkillList("Additional Skills", content.skills.additionalSkills)}
+                `;
+            }
+
+            // Populate Work Experience Section
+            const workExperienceContent = document.getElementById('work-experience-content');
+            if (workExperienceContent && content.workExperience) {
+                let html = '';
+                content.workExperience.forEach(exp => {
+                    html += `<div class="mb-6">
+                                <h3 class="text-2xl font-semibold text-blue-600 mb-2">${exp.title} (${exp.company} - ${exp.dates}):</h3>
+                                <ul class="list-disc pl-5 text-gray-600 space-y-1">`;
+                    exp.achievements.forEach(achievement => {
+                        html += `<li>${achievement}</li>`;
+                    });
+                    html += `   </ul>
+                            </div>`;
+                });
+                workExperienceContent.innerHTML = html;
+            }
+
+            // Populate Projects Section
+            const projectsContent = document.getElementById('projects-content');
+            if (projectsContent && content.projects) {
+                let html = '';
+                content.projects.forEach(project => {
+                    html += `<div class="mb-6">
+                                <h3 class="text-2xl font-semibold text-blue-600 mb-2">${project.name} ${project.dates ? `(${project.dates})` : ''}:</h3>
+                                <ul class="list-disc pl-5 text-gray-600 space-y-1">`;
+                    project.description.forEach(desc => {
+                        html += `<li>${desc}</li>`;
+                    });
+                    html += `   </ul>
+                            </div>`;
+                });
+                projectsContent.innerHTML = html;
+            }
+
+            // Populate Education Section
+            const educationContent = document.getElementById('education-content');
+            if (educationContent && content.education) {
+                educationContent.innerHTML = `
+                    <span class="font-semibold">${content.education.degree}:</span> ${content.education.university} (${content.education.dates})
+                `;
+            }
+
+            // Populate Languages Section
+            const languagesContent = document.getElementById('languages-content');
+            if (languagesContent && content.languages) {
+                let html = '';
+                content.languages.forEach(lang => {
+                    html += `<li><span class="font-semibold">${lang.name}:</span> ${lang.proficiency}</li>`;
+                });
+                languagesContent.innerHTML = html;
+            }
+        });
+    </script>
+</body>
+</html>
