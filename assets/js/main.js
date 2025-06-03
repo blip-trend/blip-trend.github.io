@@ -350,101 +350,86 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 /**
- * Initialize the responsive navigation
+ * Initialize navigation
  */
 function initNavigation() {
+    // Handle burger menu
     const burger = document.querySelector('.burger');
     const nav = document.querySelector('.nav-links');
-    const navLinks = document.querySelectorAll('.nav-links li');
     
-    // Toggle navigation
-    if (burger) {
+    if (burger && nav) {
         burger.addEventListener('click', () => {
-            // Toggle navigation
-            nav.classList.toggle('nav-active');
-            
-            // Animate links
-            navLinks.forEach((link, index) => {
-                if (link.style.animation) {
-                    link.style.animation = '';
-                } else {
-                    link.style.animation = `navLinkFade 0.5s ease forwards ${index / 7 + 0.3}s`;
-                }
+            nav.classList.toggle('active');
+            burger.classList.toggle('active');
+        });
+        
+        // Close menu when link is clicked
+        const navLinks = document.querySelectorAll('.nav-links a');
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                nav.classList.remove('active');
+                burger.classList.remove('active');
             });
-            
-            // Burger animation
-            burger.classList.toggle('toggle');
         });
     }
     
-    // Close nav when clicking outside
-    document.addEventListener('click', (e) => {
-        if (nav && nav.classList.contains('nav-active') && 
-            !e.target.closest('.nav-links') && 
-            !e.target.closest('.burger')) {
-            nav.classList.remove('nav-active');
-            burger.classList.remove('toggle');
-            
-            navLinks.forEach((link) => {
-                link.style.animation = '';
-            });
-        }
-    });
-    
-    // Close mobile nav when a link is clicked
-    navLinks.forEach(link => {
-        link.addEventListener('click', () => {
-            if (nav.classList.contains('nav-active')) {
-                nav.classList.remove('nav-active');
-                burger.classList.remove('toggle');
-                
-                navLinks.forEach((link) => {
-                    link.style.animation = '';
-                });
-            }
-        });
-    });
-}
-
-/**
- * Initialize scroll effects like navbar color change
- */
-function initScrollEffects() {
-    const navbar = document.querySelector('.navbar');
-    
-    if (navbar) {
-        window.addEventListener('scroll', () => {
+    // Add scrolling effect to navbar
+    window.addEventListener('scroll', () => {
+        const navbar = document.querySelector('.navbar');
+        if (navbar) {
             if (window.scrollY > 50) {
                 navbar.classList.add('scrolled');
             } else {
                 navbar.classList.remove('scrolled');
             }
-        });
-    }
+        }
+    });
 }
 
 /**
- * Initialize the back to top button functionality
+ * Initialize back to top button
  */
 function initBackToTopButton() {
     const backToTopButton = document.getElementById('back-to-top');
     
     if (backToTopButton) {
-        // When the user scrolls down 300px from the top of the document, show the button
-        window.onscroll = function() {
-            if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
-                backToTopButton.style.display = 'block';
+        // Show/hide button based on scroll position
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                backToTopButton.classList.add('visible');
             } else {
-                backToTopButton.style.display = 'none';
+                backToTopButton.classList.remove('visible');
             }
-        };
+        });
         
-        // When the user clicks on the button, scroll to the top of the document
+        // Scroll to top when button is clicked
         backToTopButton.addEventListener('click', () => {
-            document.body.scrollTop = 0; // For Safari
-            document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
         });
     }
+}
+
+/**
+ * Initialize scroll effects
+ */
+function initScrollEffects() {
+    // Smooth scroll for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            e.preventDefault();
+            
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                window.scrollTo({
+                    top: target.offsetTop - 60, // Offset for navbar
+                    behavior: 'smooth'
+                });
+            }
+        });
+    });
 }
 
 /**

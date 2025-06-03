@@ -1,0 +1,46 @@
+<svg width="1200" height="630" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="1200" height="630" fill="#0a1128"/>
+  
+  <!-- Gradient background effect -->
+  <radialGradient id="bgGradient1" cx="20%" cy="30%" r="70%" gradientUnits="userSpaceOnUse">
+    <stop offset="0%" stop-color="#6b4bff" stop-opacity="0.15"/>
+    <stop offset="100%" stop-color="#0a1128" stop-opacity="0"/>
+  </radialGradient>
+  <radialGradient id="bgGradient2" cx="80%" cy="70%" r="70%" gradientUnits="userSpaceOnUse">
+    <stop offset="0%" stop-color="#00e0ff" stop-opacity="0.1"/>
+    <stop offset="100%" stop-color="#0a1128" stop-opacity="0"/>
+  </radialGradient>
+  
+  <rect width="1200" height="630" fill="url(#bgGradient1)"/>
+  <rect width="1200" height="630" fill="url(#bgGradient2)"/>
+  
+  <!-- Circuit pattern -->
+  <path d="M0,0 L1200,0 L1200,630 L0,630 Z" fill="none" stroke="rgba(107, 75, 255, 0.05)" stroke-width="1" stroke-dasharray="20,20"/>
+  <path d="M0,105 L1200,105 M0,210 L1200,210 M0,315 L1200,315 M0,420 L1200,420 M0,525 L1200,525 M200,0 L200,630 M400,0 L400,630 M600,0 L600,630 M800,0 L800,630 M1000,0 L1000,630" stroke="rgba(0, 224, 255, 0.05)" stroke-width="1"/>
+  
+  <!-- Logo Icon -->
+  <circle cx="200" cy="315" r="100" fill="none" stroke="url(#bgGradient1)" stroke-width="8"/>
+  <circle cx="200" cy="315" r="60" fill="none" stroke="#00e0ff" stroke-width="5"/>
+  <circle cx="200" cy="315" r="25" fill="#6b4bff"/>
+  
+  <!-- Company Name -->
+  <linearGradient id="textGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+    <stop offset="0%" stop-color="#6b4bff"/>
+    <stop offset="100%" stop-color="#00e0ff"/>
+  </linearGradient>
+  
+  <text x="350" y="320" font-family="Inter, sans-serif" font-size="120" font-weight="900" fill="url(#textGradient)">Bl!p Co.</text>
+  
+  <!-- Tagline -->
+  <text x="350" y="380" font-family="Inter, sans-serif" font-size="40" font-weight="300" fill="#f0f7ff">Futuristic AI & IT Solutions</text>
+  
+  <!-- Decoration elements -->
+  <circle cx="1050" cy="150" r="25" fill="none" stroke="#6b4bff" stroke-width="3" opacity="0.5"/>
+  <circle cx="1050" cy="150" r="40" fill="none" stroke="#6b4bff" stroke-width="2" opacity="0.3"/>
+  <circle cx="1050" cy="150" r="55" fill="none" stroke="#6b4bff" stroke-width="1" opacity="0.2"/>
+  
+  <circle cx="150" cy="500" r="20" fill="none" stroke="#00e0ff" stroke-width="3" opacity="0.5"/>
+  <circle cx="150" cy="500" r="35" fill="none" stroke="#00e0ff" stroke-width="2" opacity="0.3"/>
+  <circle cx="150" cy="500" r="50" fill="none" stroke="#00e0ff" stroke-width="1" opacity="0.2"/>
+</svg>
