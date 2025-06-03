@@ -25,21 +25,41 @@ const portfolioContent = {
     aboutUs: "Bl!p Co. is a dynamic IT services provider specializing in cutting-edge software development, robust backend solutions, and innovative mobile applications. Our expertise spans across various domains including healthcare, e-commerce, fintech, and social media, leveraging advanced technologies like GoLang, Flutter, Java, and AI-driven development to deliver high-quality, scalable, and efficient solutions. We are committed to exceeding client expectations through meticulous attention to detail, efficient project management, and a focus on measurable results.",
     skills: {
         languagesFrameworks: [
-            "Flutter", "GoLang", "Java (Java 8, Java 11, Spring Boot, Hibernate)",
-            "Dart", "Firebase", "Gin", "Riverpod, Bloc, GetX", "RESTful APIs, GraphQL"
+            { name: "Flutter", level: 95 },
+            { name: "GoLang", level: 90 },
+            { name: "Java (Java 8, Java 11, Spring Boot, Hibernate)", level: 85 },
+            { name: "Dart", level: 95 },
+            { name: "Firebase", level: 80 },
+            { name: "Gin", level: 85 },
+            { name: "Riverpod, Bloc, GetX", level: 90 },
+            { name: "RESTful APIs, GraphQL", level: 85 }
         ],
         cloudDevOps: [
-            "AWS Cloud", "Azure Cloud", "GCP", "Containerization", "Code Magic", "Open Telemetry"
+            { name: "AWS Cloud", level: 75 },
+            { name: "Azure Cloud", level: 80 },
+            { name: "GCP", level: 70 },
+            { name: "Containerization", level: 85 },
+            { name: "Code Magic", level: 75 },
+            { name: "Open Telemetry", level: 70 }
         ],
         toolsPlatforms: [
-            "GitHub", "JIRA", "Android", "Openlink Endur"
+            { name: "GitHub", level: 90 },
+            { name: "JIRA", level: 85 },
+            { name: "Android", level: 80 },
+            { name: "Openlink Endur", level: 75 }
         ],
         methodologiesConcepts: [
-            "Microservices", "AI-driven development", "Real-time data flow", "System architecture design"
+            { name: "Microservices", level: 85 },
+            { name: "AI-driven development", level: 80 },
+            { name: "Real-time data flow", level: 75 },
+            { name: "System architecture design", level: 90 }
         ],
         additionalSkills: [
-            "Python Language", "Agora", "Machine Learning, Deep Learning, NLP, Gen-AI",
-            "Shell Script", "Javascript Development (JS, HTML, CSS)"
+            { name: "Python Language", level: 70 },
+            { name: "Agora", level: 65 },
+            { name: "Machine Learning, Deep Learning, NLP, Gen-AI", level: 75 },
+            { name: "Shell Script", level: 80 },
+            { name: "Javascript Development (JS, HTML, CSS)", level: 85 }
         ]
     },
     workExperience: [
@@ -195,6 +215,26 @@ const portfolioContent = {
         { name: "English", proficiency: "Full Professional Proficiency" },
         { name: "Hindi", proficiency: "Native or Bilingual Proficiency" },
         { name: "Khmer (Cambodian)", proficiency: "Elementary Proficiency" }
+    ],
+    testimonials: [
+        {
+            quote: "Bl!p Co. transformed our outdated systems with modern solutions that improved efficiency by 40%. Their expertise in Flutter and backend development was instrumental to our success.",
+            author: "Sarah Johnson",
+            position: "CTO, HealthTech Innovations",
+            company: "HealthTech Innovations"
+        },
+        {
+            quote: "Working with the team at Bl!p Co. was a game-changer for our mobile strategy. Their technical knowledge combined with business acumen delivered results beyond our expectations.",
+            author: "Michael Chen",
+            position: "Product Director",
+            company: "RetailConnect"
+        },
+        {
+            quote: "The AI-driven solutions Bl!p Co. developed for our data analytics platform reduced processing time by 60% and provided deeper insights into customer behavior.",
+            author: "Priya Patel",
+            position: "Head of Data Science",
+            company: "TechAnalytica"
+        }
     ]
 };
 
